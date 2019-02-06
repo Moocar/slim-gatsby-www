@@ -1,12 +1,30 @@
 # Slim www
 
-A site that contains very similar data to the ~www~ site but doesn't do all the network requests during source and transform nodes. This allows us to test performance much more easily.
+A site that contains very similar data to [gatsby www](https://github.com/gatsbyjs/gatsby/tree/master/www) site but doesn't do all the network requests during source and transform nodes. This allows us to test performance changes with more confidence.
 
-# Running the benchmark
+# Using it
 
-First, install node modules required by package.json. This is needed only one time. Then run the build
+Ensure this is checkout out at the same level as gatsby itself so we can find all the `docs/blogs` etc. Alternatively, you can update `gatsby-config.js` to point to other locations
+
+```
+gatsby $ ls
+gatsby/     slim-www/
+```
+
+The usual install
 
 ```bash
-npm install
-npm run build
+yarn install
+```
+
+First, we need to download a dataset from npm packages so that we don't have to download it each time. In `slim-www`, Run:
+
+```bash
+node src/utils/download-npm.js
+```
+
+Now run the build as normal
+
+```bash
+gatsby build
 ```

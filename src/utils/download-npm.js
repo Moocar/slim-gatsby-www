@@ -19,5 +19,5 @@ function runNpm({ keywords }) {
   browser.on(`end`, () => stream.end())
 }
 
-// runNpm({ keywords: [`gatsby-plugin`, `gatsby-component`] })
+runNpm({ keywords: [`gatsby-plugin`, `gatsby-component`] })
     

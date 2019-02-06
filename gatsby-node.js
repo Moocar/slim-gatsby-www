@@ -8,9 +8,6 @@ const moment = require(`moment`)
 const _ = require(`lodash`)
 const url = require(`url`)
 
-const NUM_PAGES = parseInt(process.env.NUM_PAGES || 5000, 10)
-const template = require(`./page-template`)
-
 const createContentDigest = obj =>
   crypto
     .createHash(`md5`)
@@ -167,13 +164,6 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             title
             slug
-            readme {
-              id
-              childMarkdownRemark {
-                id
-                html
-              }
-            }
           }
         }
       }
