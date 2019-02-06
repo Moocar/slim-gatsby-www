@@ -7,6 +7,7 @@ const client = algoliasearch(`OFCNCOG2CU`, `6fbcaeafced8913bf0e4d39f0b541957`)
 var index = client.initIndex(`npm-search`)
 
 function runNpm({ keywords }) {
+  fs.ensureDirSync(path.resolve(`data`))
   const stream = JSONStream.stringify()
   stream.pipe(fs.createWriteStream(path.resolve(`data/npm-search-results.json`)))
 
